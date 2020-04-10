@@ -80,7 +80,7 @@ Btracer可以使用下面四种形式的注解：
 2.代码示例：
 > ps:一次只能运行一个方法
 
-```
+```Java
 	import com.sun.btrace.AnyType;
 
 	import com.sun.btrace.annotations.*;
@@ -89,6 +89,7 @@ Btracer可以使用下面四种形式的注解：
 	
 	@BTrace
 	public class BtracerTest {
+		// 监控单个方法
 	    /*@OnMethod(
 	            clazz = "com.example.demo.service.DemoService",
 	            method = "getById",
@@ -100,7 +101,9 @@ Btracer可以使用下面四种形式的注解：
 	
 	    }*/
 	
-	  /*  @OnMethod(
+	  /*
+	   // 监控整个类
+	   @OnMethod(
 	            clazz = "com.example.demo.service.DemoService",
 	            method = "getById",
 	            location = @Location(value = Kind.CALL, clazz=".*",method=".*",where = Where.AFTER)
@@ -111,7 +114,9 @@ Btracer可以使用下面四种形式的注解：
 	
 	    }*/
 	
-	    /*@OnMethod(
+	    /*
+		// 查看是否执行到某一行
+		@OnMethod(
 	            clazz = "com.example.demo.service.DemoService",
 	            location = @Location(value = Kind.LINE, line = 9)
 	    )
@@ -121,6 +126,7 @@ Btracer可以使用下面四种形式的注解：
 	
 	    }*/
 	
+	   // 打印线程堆栈
 	    @OnMethod(
 	            clazz = "java.lang.System",
 	            method = "gc"
@@ -132,7 +138,9 @@ Btracer可以使用下面四种形式的注解：
 	
 	    }
 	
-	    /*@OnMethod(
+	    /*
+		// 返回值查看
+		@OnMethod(
 	            clazz = "com.example.demo.service.DemoService",
 	            method = "getById",
 	            location = @Location(Kind.RETURN)

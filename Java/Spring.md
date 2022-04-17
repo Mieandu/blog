@@ -21,7 +21,7 @@
    在依赖注入中，你不必主动的创建对象，只需要描述他们之间的关系，通过IOC容器来创建，然后装配到一起
 ## IOC和依赖注入的区别
    ioc是指让生成类的方式由传统方式（new）反过来，即程序员不调用new,需要类的时候由框架注入（di），是同一件不同层面的解读。
-   
+
 ## SpringBean的生命周期
 
 - Spring Bean 的初始化流程如下：
@@ -47,6 +47,7 @@
 	- 如果 Bean 实现 DisposableBean 接口，当 spring 容器关闭时，会调用 #destroy() 方法。
 	- 如果为 bean 指定了 destroy 方法（例如 <bean /> 的 destroy-method 属性），那么将调用该方法。
 	
+
 ![Spring Bean生命周期](http://static2.iocoder.cn/images/Spring/2018-12-24/08.png)
 ## Spring事务
 1.声明式事务（一般使用生命式事务）
@@ -57,3 +58,6 @@
 
 ## Spring解决循环依赖的问题
 [Spring怎么解决循环依赖的问题](http://svip.iocoder.cn/Spring/IoC-get-Bean-createBean-5/)
+
+
+
